@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IntentsProj</string>
+    <string name="Num1Caption">Number 1</string>
+    <string name="num2Caption">Number 2</string>
+    <string name="OkButtonCaption">OK</string>
+    <string name="addSign">+</string>
+    <string name="substractSign">-</string>
+    <string name="devideSign">/</string>
+    <string name="MultiplicationSign">*</string>
+</resources>
