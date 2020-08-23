@@ -38,13 +38,30 @@ public class MainActivity extends AppCompatActivity {
 
         final Context cont = getApplicationContext();
         final Intent toNext = new Intent(cont , SecondActivity.class);
-        toNext.putExtra("VAL_NO1" , inNum1.getText());
-        toNext.putExtra("VAL_NO2" , inNum2.getText());
+
+
+    }
+
+    @Override
+    protected void onResume() throws NumberFormatException{
+        super.onResume();
+        btnOk = findViewById(R.id.buttonOk);
+        inNum1 = (EditText) findViewById(R.id.actOneNum1);
+        inNum2 = (EditText) findViewById(R.id.actOneNum2);
+
+        final Context cont = getApplicationContext();
+        final Intent toNext = new Intent(cont , SecondActivity.class);
+
+
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int num1 = Integer.parseInt(inNum1.getText().toString());
+                int num2 = Integer.parseInt(inNum2.getText().toString());
 
+                toNext.putExtra("VAL_NO1" , num1);
+                toNext.putExtra("VAL_NO2" , num2);
 
                 CharSequence msg = "Yoy just clicked the OK button";
                 int duration = Toast.LENGTH_SHORT;
@@ -55,7 +72,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(toNext);
             }
         });
-
-
     }
 }

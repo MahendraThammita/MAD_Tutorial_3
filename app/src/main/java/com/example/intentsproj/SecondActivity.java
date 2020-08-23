@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
         no1Show = findViewById(R.id.no1DispArea);
         no2Show = findViewById(R.id.no2DispArea);
         showCalc = findViewById(R.id.showCalc);
-
+        String sti;
 
 
         Intent recieverIntent = getIntent();
@@ -53,12 +53,12 @@ public class SecondActivity extends AppCompatActivity {
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                long ans;
-                ans = Integer.parseInt(no1Show.getText().toString()) / Integer.parseInt(no2Show.getText().toString());
+                float ans;
+                ans = (float)Integer.parseInt(no1Show.getText().toString()) / Integer.parseInt(no2Show.getText().toString());
                 showCalc.setText(no1Show.getText() + " / " + no2Show.getText() +" = " + ans);
             }
         });
-        add.setOnClickListener(new View.OnClickListener() {
+        multi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int ans;
